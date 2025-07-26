@@ -13,11 +13,15 @@ return new class extends Migration
     {
         Schema::create('soltem_requests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id')->constrained()->onDelete('cascade');
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
-            $table->date('request_date')->nullable();
-            $table->timestamps();
 
+            $table->foreignId('employee_id')->constrained()->onDelete('cascade'); // yang mengajukan
+            $table->string('ticket_number');
+            $table->string('client_name');
+            $table->foreignId('soltem_id')->constrained()->onDelete('restrict');
+            $table->enum('status', ['pending', 'approved', 'rejected', 'returned'])->default('pending'); // status permintaan
+            $table->date('request_date');
+            $table->text('notes')->nullable();
+            $table->timestamps();
         });
     }
 

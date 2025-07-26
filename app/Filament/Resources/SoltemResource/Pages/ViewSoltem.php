@@ -4,17 +4,16 @@ namespace App\Filament\Resources\SoltemResource\Pages;
 
 use App\Filament\Resources\SoltemResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditSoltem extends EditRecord
+class ViewSoltem extends ViewRecord
 {
     protected static string $resource = SoltemResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Actions\ViewAction::make(),
-            Actions\DeleteAction::make(),
+            Actions\EditAction::make(),
         ];
     }
 }

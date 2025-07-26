@@ -22,10 +22,9 @@ return new class extends Migration
             $table->string('data_quota')->nullable();            // nama paket, misal: Keluarga 26.31 GB
             $table->date('quota_expiry_date')->nullable();       // masa aktif kuota
             $table->date('sim_expiry_date')->nullable();         // masa aktif kartu SIM
-            $table->enum('status', ['ready', 'out', 'used'])->default('ready');
+            $table->enum('status', ['ready', 'out', 'used'])->default('ready'); // status soltem
             $table->text('notes')->nullable();                   // keterangan tambahan
-            $table->unsignedInteger('created_at');
-            $table->unsignedInteger('updated_at');
+            $table->timestamps();
         });
     }
 

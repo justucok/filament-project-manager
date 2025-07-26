@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\SoltemResource\Pages;
+namespace App\Filament\Resources\SoltemInstallationResource\Pages;
 
-use App\Filament\Resources\SoltemResource;
+use App\Filament\Resources\SoltemInstallationResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditSoltem extends EditRecord
+class EditSoltemInstallation extends EditRecord
 {
-    protected static string $resource = SoltemResource::class;
+    protected static string $resource = SoltemInstallationResource::class;
 
     protected function getHeaderActions(): array
     {

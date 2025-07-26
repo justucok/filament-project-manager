@@ -9,6 +9,7 @@ use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -63,10 +64,49 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('position')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('department')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('first_name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('last_name')
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('date_hire')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('department')
+                    ->label('Filter by Department')
+                    ->options(
+                        fn() => Employee::query()
+                            ->distinct()
+                            ->pluck('department', 'department')
+                            ->filter() // menghindari null
+                    )
+                    ->searchable()
+                    ->preload(),
+
+                SelectFilter::make('position')
+                    ->label('Filter by Position')
+                    ->options(
+                        fn() => Employee::query()
+                            ->distinct()
+                            ->pluck('position', 'position')
+                            ->filter() // menghindari null
+                    )
+                    ->searchable()
+                    ->preload(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

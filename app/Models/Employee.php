@@ -15,7 +15,7 @@ class Employee extends Model
     ];
 
 
-    public function requests()
+    public function soltemRequests()
     {
         return $this->hasMany(SoltemRequest::class);
     }

@@ -10,6 +10,11 @@ class ListEmployees extends ListRecords
 {
     protected static string $resource = EmployeeResource::class;
 
+    protected static ?string $title = 'Employees';
+
+    protected ?string $subheading = 'Create new employee data';
+
+
     protected function getHeaderActions(): array
     {
         return [

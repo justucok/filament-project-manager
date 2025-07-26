@@ -26,23 +26,37 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('User Name')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('email')
                     ->email()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DateTimePicker::make('email_verified_at'),
+                Forms\Components\DateTimePicker::make('email_verified_at')
+                    ->disabled(),
                 Forms\Components\TextInput::make('password')
                     ->password()
+                    ->autocomplete(false)
+                    ->revealable()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('confirm_password')
+                    ->password()
+                    ->autocomplete(false)
+                    ->revealable()
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Select::make('employee.first_name' )
+                    ->label('Employee Name')
+                    ->relationship('employee', 'first_name', fn($query) => $query->where('id', '!=', 1))
+                    ->native(false)
+                    ->required()
+                    ->nullable()
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('is_admin')
                     ->required(),
-                Forms\Components\Toggle::make('is_active')
-                    ->required(),
-                Forms\Components\TextInput::make('employee_id')
-                    ->numeric(),
             ]);
     }
 
@@ -69,8 +83,7 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('employee.name')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('employee.first_name')
                     ->sortable(),
             ])
             ->filters([

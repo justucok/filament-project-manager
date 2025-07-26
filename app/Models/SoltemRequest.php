@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SoltemRequest extends Model
 {
     protected $fillable = [
+        'request_number',
         'employee_id',
         'ticket_number',
         'client_name',
@@ -15,6 +16,14 @@ class SoltemRequest extends Model
         'request_date',
         'notes',
     ];
+
+    protected static function booted()
+{
+    static::creating(function ($request) {
+        $lastNumber = static::max('id') ?? 0;
+        $request->request_number = str_pad($lastNumber + 1, 4, '0', STR_PAD_LEFT);
+    });
+}
 
     public function approve()
     {

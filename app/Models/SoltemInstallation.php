@@ -6,9 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class SoltemInstallation extends Model
 {
+    protected static function booted()
+    {
+        static::created(function ($installation) {
+            $installation->soltemRequest->soltem->update(['status' => 'used']);
+        });
+    }
+
+
     protected $fillable = [
         'employee_id',
-        'soltem_id',
+        'soltem_request_id',
         'installation_date',
         'ticket_project',
         'client_name',
@@ -22,9 +30,9 @@ class SoltemInstallation extends Model
         'notes',
     ];
 
-    public function soltem()
+    public function soltemRequest()
     {
-        return $this->belongsTo(Soltem::class);
+        return $this->belongsTo(SoltemRequest::class);
     }
     public function employee()
     {

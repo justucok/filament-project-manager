@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->boolean('is_admin')->default(false)->after('password');        // sebagai penanda admin
             $table->boolean('is_active')->default(true)->after('is_admin');        // disable user tanpa hapus
-            $table->foreignId('employee_id')->nullable()->constrained()->onDelete('set null')->after('is_active'); // foreign key to employees tabl
+            $table->foreignId('employee_id')->nullable()->constrained()->nullOnDelete()->after('is_active'); // foreign key to employees tabl
         });
     }
 

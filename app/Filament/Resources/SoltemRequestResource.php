@@ -66,14 +66,16 @@ class SoltemRequestResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('employee.first_name')
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('request_number')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('employee.first_name'),
                 Tables\Columns\TextColumn::make('ticket_number')
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('client_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('soltem.name')
-                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('request_date')
                     ->date()
@@ -114,7 +116,7 @@ class SoltemRequestResource extends Resource
                     ->label('Reject'),
                 Tables\Actions\Action::make('reject')
                     ->icon('heroicon-o-arrow-uturn-left')
-                    ->visible(fn($record) => $record->status === 'approved')
+                    ->visible(fn($record) => $record->status === 'approved' && $record->soltem->status === 'out')
                     ->action(fn($record) => $record->return())
                     ->requiresConfirmation()
                     ->color('warning')

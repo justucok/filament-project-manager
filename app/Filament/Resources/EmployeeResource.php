@@ -22,6 +22,11 @@ class EmployeeResource extends Resource
 
     protected static ?string $navigationGroup = 'Employee Management';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count()-1;
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -54,7 +59,6 @@ class EmployeeResource extends Resource
                     ->schema([
                         Forms\Components\DatePicker::make('date_hire')
                             ->required()
-                            ->displayFormat('d/m/Y')
                             ->native(false),
                     ])->columnSpanFull(),
             ]);

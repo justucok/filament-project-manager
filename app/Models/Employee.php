@@ -15,16 +15,23 @@ class Employee extends Model
     ];
 
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+    
     public function soltemRequests()
     {
         return $this->hasMany(SoltemRequest::class);
     }
 
-    public function department() {
+    public function department()
+    {
         return $this->belongsTo(Department::class);
     }
 
-    public function position() {
+    public function position()
+    {
         return $this->belongsTo(Position::class);
     }
 }

@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'employee_id',
         'is_admin',
+        'is_active',
     ];
 
     /**
@@ -45,8 +46,19 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean',
+            'is_active' => 'boolean'
         ];
     }
+
+
+    public function deactive()
+    {
+        if ($this->is_active) {
+            $this->update(['is_active' => false]);
+        }
+    }
+
 
     public function employee()
     {

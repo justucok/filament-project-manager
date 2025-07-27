@@ -74,6 +74,7 @@ class EmployeeResource extends Resource
                     ->schema([
                         Forms\Components\DatePicker::make('date_hire')
                             ->required()
+                            ->closeOnDateSelection()
                             ->native(false),
                     ])->columnSpanFull(),
             ]);

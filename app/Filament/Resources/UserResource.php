@@ -48,9 +48,15 @@ class UserResource extends Resource
                     ->revealable()
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('employee.first_name' )
+                Forms\Components\Select::make('employee.first_name')
                     ->label('Employee Name')
-                    ->relationship('employee', 'first_name', fn($query) => $query->where('id', '!=', 1))
+                    ->relationship(
+                        'employee',
+                        'first_name',
+                        fn($query) => $query
+                            ->where('id', '!=', 1)
+                            ->whereDoesntHave('user')
+                    ) // hanya employee yang belum punya user
                     ->native(false)
                     ->required()
                     ->nullable()
@@ -72,6 +78,10 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('employee.first_name')
+                    ->sortable(),
+                Tables\Columns\IconColumn::make('is_active')
+                    ->boolean(),
                 Tables\Columns\IconColumn::make('is_admin')
                     ->boolean()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -83,19 +93,23 @@ class UserResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('employee.first_name')
-                    ->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
+                Tables\Actions\Action::make('deactive')
+                    ->icon('heroicon-o-link-slash')
+                    ->action(fn($record) => $record->deactive())
+                    ->requiresConfirmation()
+                    ->color('danger')
+                    ->label('Deactive'),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 

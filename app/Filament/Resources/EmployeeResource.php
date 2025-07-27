@@ -4,9 +4,13 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EmployeeResource\Pages;
 use App\Filament\Resources\EmployeeResource\RelationManagers;
+use App\Models\Department;
 use App\Models\Employee;
+use App\Models\Position;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Filters\SelectFilter;
@@ -24,7 +28,7 @@ class EmployeeResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return static::getModel()::count()-1;
+        return static::getModel()::count() - 1;
     }
 
     public static function form(Form $form): Form
@@ -34,9 +38,20 @@ class EmployeeResource extends Resource
                 Forms\Components\Section::make('Employee Information')
                     ->description('Please fill in the employee details.')
                     ->schema([
-                        Forms\Components\TextInput::make('position')
-                            ->required(),
-                        Forms\Components\TextInput::make('department')
+                        Forms\Components\Select::make('department_id')
+                            ->relationship('department', 'name')
+                            ->required()
+                            ->native(false)
+                            ->live()
+                            ->afterStateUpdated(fn(Set $set) => $set('position_id', null)),
+                        Forms\Components\Select::make('position_id')
+                            ->options(fn(Get $get) => Position::query() // Get position based on department id
+                                ->where('department_id', $get('department_id'))
+                                ->pluck('name', 'id'))
+                            ->native(false)
+                            ->searchable()
+                            ->preload()
+                            ->live()
                             ->required(),
                     ])->columns(2),
                 Forms\Components\Section::make('Personal Information')
@@ -68,9 +83,9 @@ class EmployeeResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('position')
+                Tables\Columns\TextColumn::make('department.name')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('department')
+                Tables\Columns\TextColumn::make('position.name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('first_name')
                     ->searchable(),
@@ -90,25 +105,15 @@ class EmployeeResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                SelectFilter::make('department')
+                SelectFilter::make('department_id')
                     ->label('Filter by Department')
-                    ->options(
-                        fn() => Employee::query()
-                            ->distinct()
-                            ->pluck('department', 'department')
-                            ->filter() // menghindari null
-                    )
+                    ->relationship('department', 'name')
                     ->searchable()
                     ->preload(),
 
-                SelectFilter::make('position')
+                SelectFilter::make('position_id')
                     ->label('Filter by Position')
-                    ->options(
-                        fn() => Employee::query()
-                            ->distinct()
-                            ->pluck('position', 'position')
-                            ->filter() // menghindari null
-                    )
+                    ->relationship('position', 'name')
                     ->searchable()
                     ->preload(),
             ])

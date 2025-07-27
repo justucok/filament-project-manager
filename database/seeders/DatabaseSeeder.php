@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Department;
 use App\Models\Employee;
+use App\Models\Position;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,11 +18,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        Department::create([
+            'name' => 'Management'
+        ]);
+
+        Position::create([
+            'department_id' => 1,
+            'name' => 'Administrator'
+        ]);
+
         Employee::create([
             'first_name' => 'Admin',
             'last_name' => 'User',
-            'position' => 'Administrator',
-            'department' => 'Management',
+            'position_id' => 1,
+            'department_id' => 1,
             'date_hire' => now(),
         ]);
 

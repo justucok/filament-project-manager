@@ -9,8 +9,8 @@ class Employee extends Model
     protected $fillable = [
         'first_name',
         'last_name',
-        'position',
-        'department',
+        'department_id',
+        'position_id',
         'date_hire',
     ];
 
@@ -18,5 +18,13 @@ class Employee extends Model
     public function soltemRequests()
     {
         return $this->hasMany(SoltemRequest::class);
+    }
+
+    public function department() {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function position() {
+        return $this->belongsTo(Position::class);
     }
 }

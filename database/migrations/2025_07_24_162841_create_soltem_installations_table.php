@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('soltem_installations', function (Blueprint $table) {
             $table->id();
-
+            $table->string('installation_number')->unique();
             $table->foreignId('employee_id')
                 ->constrained()
                 ->onDelete('cascade');                  // yang melakukan instalasi

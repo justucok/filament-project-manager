@@ -4,6 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\SoltemResource\Pages;
 use App\Filament\Resources\SoltemResource\RelationManagers;
+use App\Filament\Resources\SoltemResource\RelationManagers\SoltemInstallationRelationManager;
+use App\Filament\Resources\SoltemResource\RelationManagers\SoltemRequestRelationManager;
 use App\Models\Soltem;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -158,7 +160,8 @@ class SoltemResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            SoltemRequestRelationManager::class,
+            SoltemInstallationRelationManager::class
         ];
     }
 

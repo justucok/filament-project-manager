@@ -43,10 +43,10 @@ class DepartmentResource extends Resource
                     ->counts('position')
                     ->label('Total positions')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('employee_count')
-                    ->counts('employee')
-                    ->label('Total employees')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('employee_count')
+                //     ->counts('employee')
+                //     ->label('Total employees')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

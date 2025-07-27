@@ -1,29 +1,20 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\SoltemResource\RelationManagers;
 
-use App\Filament\Resources\SoltemRequestResource\Pages;
-use App\Filament\Resources\SoltemRequestResource\RelationManagers;
-use App\Models\SoltemRequest;
 use Filament\Forms;
 use Filament\Forms\Form;
-use Filament\Resources\Resource;
+use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class SoltemRequestResource extends Resource
+class SoltemRequestRelationManager extends RelationManager
 {
-    protected static ?string $model = SoltemRequest::class;
+    protected static string $relationship = 'SoltemRequest';
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
-
-    protected static ?string $navigationGroup = 'Master Data Management';
-
-    protected static ?int $navigationSort = 2;
-
-    public static function form(Form $form): Form
+    public function form(Form $form): Form
     {
         return $form
             ->schema([
@@ -55,7 +46,6 @@ class SoltemRequestResource extends Resource
                             ->searchable()
                             ->required(),
                         Forms\Components\DatePicker::make('request_date')
-                            ->native()
                             ->required(),
                         Forms\Components\Textarea::make('notes')
                             ->columnSpanFull(),
@@ -63,13 +53,11 @@ class SoltemRequestResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
+    public function table(Table $table): Table
     {
         return $table
+            ->recordTitleAttribute('request_number')
             ->columns([
-                Tables\Columns\TextColumn::make('request_number')
-                    ->sortable()
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('employee.first_name'),
                 Tables\Columns\TextColumn::make('ticket_number')
                     ->sortable()
@@ -100,54 +88,17 @@ class SoltemRequestResource extends Resource
             ->filters([
                 //
             ])
+            ->headerActions([
+                // Tables\Actions\CreateAction::make(),
+            ])
             ->actions([
-                Tables\Actions\Action::make('approve')
-                    ->icon('heroicon-o-check')
-                    ->visible(fn($record) => $record->status === 'pending')
-                    ->action(fn($record) => $record->approve())
-                    ->requiresConfirmation()
-                    ->color('success')
-                    ->label('Approve'),
-                Tables\Actions\Action::make('reject')
-                    ->icon('heroicon-o-x-mark')
-                    ->visible(fn($record) => $record->status === 'pending')
-                    ->action(fn($record) => $record->reject())
-                    ->requiresConfirmation()
-                    ->color('danger')
-                    ->label('Reject'),
-                Tables\Actions\Action::make('reject')
-                    ->icon('heroicon-o-arrow-uturn-left')
-                    ->visible(fn($record) => $record->status === 'approved' && $record->soltem->status === 'out')
-                    ->action(fn($record) => $record->return())
-                    ->requiresConfirmation()
-                    ->color('warning')
-                    ->label('Return'),
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\EditAction::make(),
-                ]),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
-
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ListSoltemRequests::route('/'),
-            'create' => Pages\CreateSoltemRequest::route('/create'),
-            'view' => Pages\ViewSoltemRequest::route('/{record}'),
-            'edit' => Pages\EditSoltemRequest::route('/{record}/edit'),
-        ];
     }
 }

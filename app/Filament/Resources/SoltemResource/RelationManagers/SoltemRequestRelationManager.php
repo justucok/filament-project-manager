@@ -46,6 +46,10 @@ class SoltemRequestRelationManager extends RelationManager
                             ->searchable()
                             ->required(),
                         Forms\Components\DatePicker::make('request_date')
+                        ->default(now()->toDateString())
+                            ->minDate(now()->toDateString())
+                            ->closeOnDateSelection()
+                            ->native(false)
                             ->required(),
                         Forms\Components\Textarea::make('notes')
                             ->columnSpanFull(),

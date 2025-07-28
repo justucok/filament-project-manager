@@ -23,6 +23,11 @@ class SoltemInstallationResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -68,6 +73,8 @@ class SoltemInstallationResource extends Resource
                     ->description('Please fill in the installation details.')
                     ->schema([
                         Forms\Components\DatePicker::make('installation_date')
+                            ->maxDate(now()->toDateString())
+                            ->closeOnDateSelection()
                             ->native(false)
                             ->required(),
                         Forms\Components\TextInput::make('access')

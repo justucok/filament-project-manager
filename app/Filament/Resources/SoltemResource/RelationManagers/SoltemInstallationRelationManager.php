@@ -59,6 +59,8 @@ class SoltemInstallationRelationManager extends RelationManager
                     ->description('Please fill in the installation details.')
                     ->schema([
                         Forms\Components\DatePicker::make('installation_date')
+                            ->maxDate(now()->toDateString())
+                            ->closeOnDateSelection()
                             ->native(false)
                             ->required(),
                         Forms\Components\TextInput::make('access')

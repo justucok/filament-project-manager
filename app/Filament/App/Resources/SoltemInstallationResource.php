@@ -56,9 +56,9 @@ class SoltemInstallationResource extends Resource
                             ->required()
                             ->maxLength(255),
                         Forms\Components\TextInput::make('case_number')
-                            ->numeric()          // Case number for the installation
+                            ->numeric()                                                       // Case number for the installation
                             ->maxLength(255),
-                        Forms\Components\Select::make('category')                // Category of the installation
+                        Forms\Components\Select::make('category')                       // Category of the installation
                             ->options([
                                 'installation' => 'Installation',
                                 'maintenance' => 'Maintenance',
@@ -70,10 +70,12 @@ class SoltemInstallationResource extends Resource
                     ->description('Please fill in the installation details.')
                     ->schema([
                         Forms\Components\DatePicker::make('installation_date')
+                            ->maxDate(now()->toDateString())
+                            ->closeOnDateSelection()
                             ->native(false)
                             ->required(),
                         Forms\Components\TextInput::make('access')
-                            ->required(),                                                   // Access details for the installation
+                            ->required(),                                                    // Access details for the installation
                         Forms\Components\Textarea::make('installation_address')
                             ->required()
                             ->columnSpanFull(),

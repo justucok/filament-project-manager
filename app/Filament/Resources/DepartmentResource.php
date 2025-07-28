@@ -42,6 +42,7 @@ class DepartmentResource extends Resource
                 Tables\Columns\TextColumn::make('position_count')
                     ->counts('position')
                     ->label('Total positions')
+                    ->badge()
                     ->searchable(),
                 // Tables\Columns\TextColumn::make('employee_count')
                 //     ->counts('employee')

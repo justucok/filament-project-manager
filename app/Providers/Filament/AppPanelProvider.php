@@ -35,7 +35,10 @@ class AppPanelProvider extends PanelProvider
                 MenuItem::make()
                     ->label('Admin Panel')
                     ->url('/admin')
-                    ->visible(fn(): bool => auth()->user()?->is_admin)
+                    ->visible(fn(): bool => auth()->user()?->is_admin),
+                MenuItem::make()
+                    ->label('Change Password')
+                    ->url('/profile')
             ])
             ->colors([
                 'primary' => Color::Amber,

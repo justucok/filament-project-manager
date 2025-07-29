@@ -7,54 +7,102 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Filament Project Manager
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Filament Project Manager** adalah aplikasi manajemen inventaris dan permintaan barang (Soltem) berbasis Laravel Filament. Aplikasi ini dirancang untuk memudahkan pencatatan pengambilan, penggunaan, dan pengembalian barang oleh karyawan, serta memungkinkan admin memantau dan mengelola status barang.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Dua panel login: Admin dan Karyawan.
+- Admin dapat:
+  - Menambahkan stok barang (Soltem).
+  - Mengelola akun dan karyawan.
+  - Melihat grafik status barang.
+  - Menyetujui atau menolak permintaan Soltem.
+- Karyawan dapat:
+  - Mengajukan permintaan Soltem.
+  - Mengisi berita acara pemasangan jika barang digunakan.
+  - Mengembalikan barang jika tidak jadi digunakan.
+- Visualisasi grafik status Soltem mingguan.
+- Filter dinamis pada grafik berdasarkan status barang.
+- Sistem status Soltem: `available`, `used`, `out`.
 
-## Learning Laravel
+## ⚙️ Teknologi yang Digunakan
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- [Laravel 11](https://laravel.com/)
+- [Filament v3](https://filamentphp.com/)
+- [Spatie Laravel Permissions](https://spatie.be/docs/laravel-permission/)
+- [Flowframe Laravel Trend](https://github.com/flowframe/laravel-trend)
+- TailwindCSS
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🚀 Panduan Instalasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Clone Repository
 
-## Laravel Sponsors
+```
+git clone https://github.com/justucok/filament-project-manager.git
+cd filament-project-manager
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Instalasi Dependency
+```
+composer install
+```
+### 3. Salin dan Konfigurasi Environment
+```
+cp .env.example .env
+```
 
-### Premium Partners
+Lalu sesuaikan konfigurasi di .env, terutama bagian:
+```
+DB_DATABASE=your_database_name
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 4. Generate Application Key
+```
+php artisan key:generate
+```
 
-## Contributing
+### 5. Jalankan Migrasi dan Seeder (jika ada)
+```
+php artisan migrate
+php artisan db:seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 6. Jalankan Server Lokal
+```
+php artisan serve
+```
 
-## Code of Conduct
+Aplikasi akan tersedia di http://127.0.0.1:8000
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+🔐 Akun Login Default 
+Anda dapat masuk dengan akun default:
 
-## Security Vulnerabilities
+Email: admin@mail.com
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Password: admin123
+
+
+
+📦 Struktur Fitur
+Soltem: Barang inventaris yang dapat dipinjam.
+
+SoltemRequest: Permintaan pengambilan Soltem oleh karyawan.
+
+SoltemRequestItem: Detail barang yang diminta, dengan status dan lokasi pemasangan jika digunakan.
+
+User: Akun login, dengan role is_admin untuk membedakan admin dan karyawan.
+
+Employee: Informasi karyawan seperti nama, department, dan tanggal direkrut.
+
+👨‍💻 Kontribusi
+Proyek ini masih dalam tahap pengembangan aktif. Silakan buka issue atau pull request jika ingin berkontribusi atau menemukan bug.
+
+🧑‍🎓 Author
+Developed by Just Ucok
 
 ## License
 

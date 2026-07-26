@@ -8,17 +8,16 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     libicu-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
     zip \
     unzip \
     libpq-dev \
     nodejs \
-    npm
+    npm && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev && \
-    docker-php-ext-configure gd --with-freetype --with-jpeg && \
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-configure intl && \
     docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd intl
 

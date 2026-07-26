@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
+    libzip-dev \
     zip \
     unzip \
     libpq-dev \
@@ -19,7 +20,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-configure intl && \
-    docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd intl
+    docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd intl zip
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

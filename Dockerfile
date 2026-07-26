@@ -12,7 +12,6 @@ RUN composer install \
     --no-interaction \
     --no-scripts \
     --prefer-dist \
-    --no-dev \
     --optimize-autoloader
 
 # Stage 2: Build Node dependencies

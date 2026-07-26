@@ -40,7 +40,7 @@ RUN cp .env.example .env
 ENV COMPOSER_MEMORY_LIMIT=-1
 
 # Install composer dependencies
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install --no-dev --optimize-autoloader --no-scripts
 
 # Install NPM dependencies & build
 RUN npm install && npm run build
@@ -49,7 +49,9 @@ RUN npm install && npm run build
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Run migration and start PHP dev server (untuk Render port otomatis diset di $PORT)
-CMD php artisan config:cache && \
+CMD php artisan package:discover --ansi && \
+    php artisan filament:upgrade && \
+    php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \
     php artisan migrate --force --seed && \

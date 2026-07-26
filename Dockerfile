@@ -1,9 +1,33 @@
-FROM php:8.2-fpm
+# Stage 1: Build composer dependencies
+FROM composer:2.7 as vendor
+WORKDIR /app
+
+# Copy composer files
+COPY composer.json composer.json
+COPY composer.lock composer.lock
+
+# Install dependencies ignoring platform requirements for now
+RUN composer install \
+    --ignore-platform-reqs \
+    --no-interaction \
+    --no-scripts \
+    --prefer-dist \
+    --no-dev \
+    --optimize-autoloader
+
+# Stage 2: Build Node dependencies
+FROM node:20 as frontend
+WORKDIR /app
+COPY package.json package-lock.json vite.config.js ./
+COPY resources/ resources/
+RUN npm ci
+RUN npm run build
+
+# Stage 3: Final Image
+FROM php:8.2-cli
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
@@ -11,44 +35,32 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libzip-dev \
-    zip \
-    unzip \
     libpq-dev \
-    nodejs \
-    npm && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+    unzip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Configure and install PHP extensions
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
     docker-php-ext-configure intl && \
     docker-php-ext-install pdo_pgsql mbstring exif pcntl bcmath gd intl zip
 
-ENV COMPOSER_ALLOW_SUPERUSER=1
-
-# Get latest Composer
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
 # Set working directory
 WORKDIR /var/www
 
-# Copy existing application directory contents
+# Copy the application code
 COPY . /var/www
 
-# Copy .env.example to .env so artisan scripts don't fail during composer install
+# Copy vendor and node_modules/build from previous stages
+COPY --from=vendor /app/vendor/ /var/www/vendor/
+COPY --from=frontend /app/public/build/ /var/www/public/build/
+
+# Ensure .env exists
 RUN cp .env.example .env
-
-# Set composer memory limit
-ENV COMPOSER_MEMORY_LIMIT=-1
-
-# Install composer dependencies
-RUN composer install --no-dev --optimize-autoloader --no-scripts
-
-# Install NPM dependencies & build
-RUN npm install && npm run build
 
 # Set permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Run migration and start PHP dev server (untuk Render port otomatis diset di $PORT)
+# Run package discovery and artisan commands on startup, then serve
 CMD php artisan package:discover --ansi && \
     php artisan filament:upgrade && \
     php artisan config:cache && \

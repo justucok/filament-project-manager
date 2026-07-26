@@ -91,6 +91,7 @@ class SoltemRequestResource extends Resource
                         'approved' => 'success',
                         'rejected' => 'danger',
                         'pending' => 'gray',
+                        'returned' => 'warning',
                     }),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

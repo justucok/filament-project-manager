@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        // Prevent duplicate seeding if run multiple times
+        if (User::where('email', 'admin@demo.com')->exists()) {
+            return;
+        }
+
         // ─── 1. Departments (6 fixed) ────────────────────────────────────────
         $deptNames = ['IT', 'HR', 'Finance', 'Operations', 'Engineering', 'Management'];
         foreach ($deptNames as $name) {

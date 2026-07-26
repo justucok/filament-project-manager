@@ -1,0 +1,547 @@
+{
+  "app/Filament/App/Resources/SoltemInstallationResource.php": {
+    "mtime": 1753708339.0307393,
+    "ast_hash": "f642283984efbcf589b3e564fd0c9161",
+    "semantic_hash": "f642283984efbcf589b3e564fd0c9161"
+  },
+  "app/Filament/App/Resources/SoltemInstallationResource/Pages/CreateSoltemInstallation.php": {
+    "mtime": 1753708339.0318468,
+    "ast_hash": "343107f5d0d45825e72c6fcc99f7026b",
+    "semantic_hash": "343107f5d0d45825e72c6fcc99f7026b"
+  },
+  "app/Filament/App/Resources/SoltemInstallationResource/Pages/EditSoltemInstallation.php": {
+    "mtime": 1753708339.032672,
+    "ast_hash": "dcc5243d71839b33296d72fc02e482e8",
+    "semantic_hash": "dcc5243d71839b33296d72fc02e482e8"
+  },
+  "app/Filament/App/Resources/SoltemInstallationResource/Pages/ListSoltemInstallations.php": {
+    "mtime": 1753708339.034846,
+    "ast_hash": "667e312e572ced2adcb0e2485bfbae2f",
+    "semantic_hash": "667e312e572ced2adcb0e2485bfbae2f"
+  },
+  "app/Filament/App/Resources/SoltemRequestResource.php": {
+    "mtime": 1753708339.0353343,
+    "ast_hash": "3d391242377c7b52b1fb6769aaba40fb",
+    "semantic_hash": "3d391242377c7b52b1fb6769aaba40fb"
+  },
+  "app/Filament/App/Resources/SoltemRequestResource/Pages/CreateSoltemRequest.php": {
+    "mtime": 1753708339.036559,
+    "ast_hash": "ab4234668f62d7898fe2983fa2e0e202",
+    "semantic_hash": "ab4234668f62d7898fe2983fa2e0e202"
+  },
+  "app/Filament/App/Resources/SoltemRequestResource/Pages/EditSoltemRequest.php": {
+    "mtime": 1753708339.0372899,
+    "ast_hash": "85b43bdbd40ea72fafff7d47542085f7",
+    "semantic_hash": "85b43bdbd40ea72fafff7d47542085f7"
+  },
+  "app/Filament/App/Resources/SoltemRequestResource/Pages/ListSoltemRequests.php": {
+    "mtime": 1753708339.0381153,
+    "ast_hash": "0e0f8dcd4528e628484c75501a6a328c",
+    "semantic_hash": "0e0f8dcd4528e628484c75501a6a328c"
+  },
+  "app/Filament/App/Widgets/AvailableSoltem.php": {
+    "mtime": 1753708339.0390878,
+    "ast_hash": "cb282abb8dea259e3a5922ee76156d92",
+    "semantic_hash": "cb282abb8dea259e3a5922ee76156d92"
+  },
+  "app/Filament/App/Widgets/SoltemOverview.php": {
+    "mtime": 1753708339.0398679,
+    "ast_hash": "198235af7d8320fad6e0e0912edc558a",
+    "semantic_hash": "198235af7d8320fad6e0e0912edc558a"
+  },
+  "app/Filament/Resources/DepartmentResource.php": {
+    "mtime": 1753708339.0410097,
+    "ast_hash": "b385f1976920b2580be693e2f8055139",
+    "semantic_hash": "b385f1976920b2580be693e2f8055139"
+  },
+  "app/Filament/Resources/DepartmentResource/Pages/CreateDepartment.php": {
+    "mtime": 1753625637.8369777,
+    "ast_hash": "05e852486156eb6c21efa974de3a10b5",
+    "semantic_hash": "05e852486156eb6c21efa974de3a10b5"
+  },
+  "app/Filament/Resources/DepartmentResource/Pages/EditDepartment.php": {
+    "mtime": 1753625637.8382251,
+    "ast_hash": "110ba3eff23ca52a44183214c0f8a7df",
+    "semantic_hash": "110ba3eff23ca52a44183214c0f8a7df"
+  },
+  "app/Filament/Resources/DepartmentResource/Pages/ListDepartments.php": {
+    "mtime": 1753625637.8355136,
+    "ast_hash": "10e3de082b3e105ab89b08420fbd79b2",
+    "semantic_hash": "10e3de082b3e105ab89b08420fbd79b2"
+  },
+  "app/Filament/Resources/DepartmentResource/RelationManagers/PositionRelationManager.php": {
+    "mtime": 1753629017.0202131,
+    "ast_hash": "95e0e3ef3dfbab48beea206e1133b325",
+    "semantic_hash": "95e0e3ef3dfbab48beea206e1133b325"
+  },
+  "app/Filament/Resources/EmployeeResource.php": {
+    "mtime": 1753636735.8917317,
+    "ast_hash": "d85437b4fb325905ee8339e618066c02",
+    "semantic_hash": "d85437b4fb325905ee8339e618066c02"
+  },
+  "app/Filament/Resources/EmployeeResource/Pages/CreateEmployee.php": {
+    "mtime": 1753366963.5376782,
+    "ast_hash": "5939fc70ce98361816e2bf5ec2d6dddc",
+    "semantic_hash": "5939fc70ce98361816e2bf5ec2d6dddc"
+  },
+  "app/Filament/Resources/EmployeeResource/Pages/EditEmployee.php": {
+    "mtime": 1753366963.538514,
+    "ast_hash": "11419727229a9f6b1d6f40dcaeb98377",
+    "semantic_hash": "11419727229a9f6b1d6f40dcaeb98377"
+  },
+  "app/Filament/Resources/EmployeeResource/Pages/ListEmployees.php": {
+    "mtime": 1753517371.0048692,
+    "ast_hash": "0425e7fd3ad5d73fe49496a37b224a8f",
+    "semantic_hash": "0425e7fd3ad5d73fe49496a37b224a8f"
+  },
+  "app/Filament/Resources/SoltemInstallationResource.php": {
+    "mtime": 1753708339.0426288,
+    "ast_hash": "90719662ee3021be0d1b2d25cf37e9e6",
+    "semantic_hash": "90719662ee3021be0d1b2d25cf37e9e6"
+  },
+  "app/Filament/Resources/SoltemInstallationResource/Pages/CreateSoltemInstallation.php": {
+    "mtime": 1753563734.4723852,
+    "ast_hash": "21891da0692e0202d99fd737537cb564",
+    "semantic_hash": "21891da0692e0202d99fd737537cb564"
+  },
+  "app/Filament/Resources/SoltemInstallationResource/Pages/EditSoltemInstallation.php": {
+    "mtime": 1753563734.4739008,
+    "ast_hash": "948e0373710eaed3389bf51d5d82e19a",
+    "semantic_hash": "948e0373710eaed3389bf51d5d82e19a"
+  },
+  "app/Filament/Resources/SoltemInstallationResource/Pages/ListSoltemInstallations.php": {
+    "mtime": 1753563734.4713018,
+    "ast_hash": "51ca0cadc69ed2570db3c55d2437671d",
+    "semantic_hash": "51ca0cadc69ed2570db3c55d2437671d"
+  },
+  "app/Filament/Resources/SoltemInstallationResource/Pages/ViewSoltemInstallation.php": {
+    "mtime": 1753563734.4731467,
+    "ast_hash": "073ecf9bd4d2f639232b40cb9a27b1aa",
+    "semantic_hash": "073ecf9bd4d2f639232b40cb9a27b1aa"
+  },
+  "app/Filament/Resources/SoltemRequestResource.php": {
+    "mtime": 1753708339.04406,
+    "ast_hash": "d0ca5fc178613eb75f5c65519e3c5690",
+    "semantic_hash": "d0ca5fc178613eb75f5c65519e3c5690"
+  },
+  "app/Filament/Resources/SoltemRequestResource/Pages/CreateSoltemRequest.php": {
+    "mtime": 1753551161.809852,
+    "ast_hash": "8bc393cc77bda2ba1b0673eae9ff9aad",
+    "semantic_hash": "8bc393cc77bda2ba1b0673eae9ff9aad"
+  },
+  "app/Filament/Resources/SoltemRequestResource/Pages/EditSoltemRequest.php": {
+    "mtime": 1753551161.8108163,
+    "ast_hash": "e5bb89e6b13baa38f0685b176740d9bd",
+    "semantic_hash": "e5bb89e6b13baa38f0685b176740d9bd"
+  },
+  "app/Filament/Resources/SoltemRequestResource/Pages/ListSoltemRequests.php": {
+    "mtime": 1753562489.2726865,
+    "ast_hash": "0e7826b6a610f7dd95c90e64450a1bc7",
+    "semantic_hash": "0e7826b6a610f7dd95c90e64450a1bc7"
+  },
+  "app/Filament/Resources/SoltemRequestResource/Pages/ViewSoltemRequest.php": {
+    "mtime": 1753551161.8104196,
+    "ast_hash": "79b671370545b6670b0cebdb978444fc",
+    "semantic_hash": "79b671370545b6670b0cebdb978444fc"
+  },
+  "app/Filament/Resources/SoltemResource.php": {
+    "mtime": 1753633865.230625,
+    "ast_hash": "6df8e98053bcd8d4d3aaad2450ae2eda",
+    "semantic_hash": "6df8e98053bcd8d4d3aaad2450ae2eda"
+  },
+  "app/Filament/Resources/SoltemResource/Pages/CreateSoltem.php": {
+    "mtime": 1753518936.2339535,
+    "ast_hash": "746033118e3f1c1345822c30f01bdfac",
+    "semantic_hash": "746033118e3f1c1345822c30f01bdfac"
+  },
+  "app/Filament/Resources/SoltemResource/Pages/EditSoltem.php": {
+    "mtime": 1753518936.235023,
+    "ast_hash": "b6e86903e2a44d667d50c55ef5d2c2dd",
+    "semantic_hash": "b6e86903e2a44d667d50c55ef5d2c2dd"
+  },
+  "app/Filament/Resources/SoltemResource/Pages/ListSoltems.php": {
+    "mtime": 1753561502.198481,
+    "ast_hash": "735b04c0779dddc60041a7dcb8632016",
+    "semantic_hash": "735b04c0779dddc60041a7dcb8632016"
+  },
+  "app/Filament/Resources/SoltemResource/Pages/ViewSoltem.php": {
+    "mtime": 1753561304.527227,
+    "ast_hash": "40e2e5167206f01bc332e44b7370f165",
+    "semantic_hash": "40e2e5167206f01bc332e44b7370f165"
+  },
+  "app/Filament/Resources/SoltemResource/RelationManagers/SoltemInstallationRelationManager.php": {
+    "mtime": 1753708339.04595,
+    "ast_hash": "bef10afc64ff6d29949193472312d44f",
+    "semantic_hash": "bef10afc64ff6d29949193472312d44f"
+  },
+  "app/Filament/Resources/SoltemResource/RelationManagers/SoltemRequestRelationManager.php": {
+    "mtime": 1753634798.1996493,
+    "ast_hash": "2417f6c2c833cad8eb0d8f8efe8ce687",
+    "semantic_hash": "2417f6c2c833cad8eb0d8f8efe8ce687"
+  },
+  "app/Filament/Resources/UserResource.php": {
+    "mtime": 1753637151.607686,
+    "ast_hash": "7c75c9647feae483dd5ebe5f2bb96b1a",
+    "semantic_hash": "7c75c9647feae483dd5ebe5f2bb96b1a"
+  },
+  "app/Filament/Resources/UserResource/Pages/CreateUser.php": {
+    "mtime": 1753516610.8843136,
+    "ast_hash": "8714dd3186164c922a3a9bcb184cbf2e",
+    "semantic_hash": "8714dd3186164c922a3a9bcb184cbf2e"
+  },
+  "app/Filament/Resources/UserResource/Pages/EditUser.php": {
+    "mtime": 1753636416.4195502,
+    "ast_hash": "ed5b3c89cd7d276158b708a23248fe2f",
+    "semantic_hash": "ed5b3c89cd7d276158b708a23248fe2f"
+  },
+  "app/Filament/Resources/UserResource/Pages/ListUsers.php": {
+    "mtime": 1753516610.8832345,
+    "ast_hash": "8fc76ef7ee0e819ec1db174d465aaca0",
+    "semantic_hash": "8fc76ef7ee0e819ec1db174d465aaca0"
+  },
+  "app/Filament/Widgets/EmployeesChart.php": {
+    "mtime": 1753708339.0470045,
+    "ast_hash": "6297e0381f10ffd65b380db8d0f94781",
+    "semantic_hash": "6297e0381f10ffd65b380db8d0f94781"
+  },
+  "app/Filament/Widgets/SoltemsChart.php": {
+    "mtime": 1753708339.0477953,
+    "ast_hash": "e4219b53965f4baa3f331ccfa8cfc927",
+    "semantic_hash": "e4219b53965f4baa3f331ccfa8cfc927"
+  },
+  "app/Http/Controllers/Controller.php": {
+    "mtime": 1753364715.7346299,
+    "ast_hash": "25a307335c0719bc9a91b3f7babd186d",
+    "semantic_hash": "25a307335c0719bc9a91b3f7babd186d"
+  },
+  "app/Http/Middleware/VerifyIsActive.php": {
+    "mtime": 1753637792.331258,
+    "ast_hash": "966118a6575269d7ac005ed2f5bc8c0d",
+    "semantic_hash": "966118a6575269d7ac005ed2f5bc8c0d"
+  },
+  "app/Http/Middleware/VerifyIsAdmin.php": {
+    "mtime": 1753634868.0645535,
+    "ast_hash": "a3e673743f9d0da8f7ad21bdccf8a62e",
+    "semantic_hash": "a3e673743f9d0da8f7ad21bdccf8a62e"
+  },
+  "app/Models/Department.php": {
+    "mtime": 1753625550.456024,
+    "ast_hash": "89980310e84156a5b9f8ccd303f0ab7d",
+    "semantic_hash": "89980310e84156a5b9f8ccd303f0ab7d"
+  },
+  "app/Models/Employee.php": {
+    "mtime": 1753636971.4438539,
+    "ast_hash": "274a12e534e5e1702b7c24efa09441e8",
+    "semantic_hash": "274a12e534e5e1702b7c24efa09441e8"
+  },
+  "app/Models/Position.php": {
+    "mtime": 1753625550.456093,
+    "ast_hash": "f233c65487bcc3c66c9eafcef54d8441",
+    "semantic_hash": "f233c65487bcc3c66c9eafcef54d8441"
+  },
+  "app/Models/Soltem.php": {
+    "mtime": 1753630374.595509,
+    "ast_hash": "4b4817db7a3c26088aa41adecdc92817",
+    "semantic_hash": "4b4817db7a3c26088aa41adecdc92817"
+  },
+  "app/Models/SoltemInstallation.php": {
+    "mtime": 1753629983.9455948,
+    "ast_hash": "cb4b8def44665aee44ff8dad6f73e64c",
+    "semantic_hash": "cb4b8def44665aee44ff8dad6f73e64c"
+  },
+  "app/Models/SoltemRequest.php": {
+    "mtime": 1753628287.761953,
+    "ast_hash": "5f5188918ae2360c066c957a5879daca",
+    "semantic_hash": "5f5188918ae2360c066c957a5879daca"
+  },
+  "app/Models/User.php": {
+    "mtime": 1753637296.4640362,
+    "ast_hash": "7987c3c62cc3a482ffa01879730ef9d0",
+    "semantic_hash": "7987c3c62cc3a482ffa01879730ef9d0"
+  },
+  "app/Providers/AppServiceProvider.php": {
+    "mtime": 1753364715.7353518,
+    "ast_hash": "c0094f35cad6bba7636002a62186dae4",
+    "semantic_hash": "c0094f35cad6bba7636002a62186dae4"
+  },
+  "app/Providers/Filament/AdminPanelProvider.php": {
+    "mtime": 1753635788.1883216,
+    "ast_hash": "6868a7e5a0dfb8ff5d349858a8470727",
+    "semantic_hash": "6868a7e5a0dfb8ff5d349858a8470727"
+  },
+  "app/Providers/Filament/AppPanelProvider.php": {
+    "mtime": 1753708339.049316,
+    "ast_hash": "f04fd6254c1ca5aedb803febe534d370",
+    "semantic_hash": "f04fd6254c1ca5aedb803febe534d370"
+  },
+  "artisan": {
+    "mtime": 1753364715.7358618,
+    "ast_hash": "e66bb13691f6184c762c196427d8e685",
+    "semantic_hash": "e66bb13691f6184c762c196427d8e685"
+  },
+  "bootstrap/app.php": {
+    "mtime": 1753364715.736146,
+    "ast_hash": "d98cb8343b14d080523decff545f5fc8",
+    "semantic_hash": "d98cb8343b14d080523decff545f5fc8"
+  },
+  "bootstrap/providers.php": {
+    "mtime": 1753634222.6050692,
+    "ast_hash": "bb5058e01dfe662d4c346a504c562a44",
+    "semantic_hash": "bb5058e01dfe662d4c346a504c562a44"
+  },
+  "composer.json": {
+    "mtime": 1753708597.0229182,
+    "ast_hash": "afa5dbe3105a94d25a7505c6b571372e",
+    "semantic_hash": "afa5dbe3105a94d25a7505c6b571372e"
+  },
+  "config/app.php": {
+    "mtime": 1753364715.738507,
+    "ast_hash": "276578ad68424be59d0998379ae7d4cb",
+    "semantic_hash": "276578ad68424be59d0998379ae7d4cb"
+  },
+  "config/auth.php": {
+    "mtime": 1753364715.7387173,
+    "ast_hash": "74dec5ff7ad634dc226fd424f2414585",
+    "semantic_hash": "74dec5ff7ad634dc226fd424f2414585"
+  },
+  "config/cache.php": {
+    "mtime": 1753364715.7389143,
+    "ast_hash": "52938e090edbc480544e085de0f4f276",
+    "semantic_hash": "52938e090edbc480544e085de0f4f276"
+  },
+  "config/database.php": {
+    "mtime": 1753364715.7391093,
+    "ast_hash": "28fa9ace614a5a5cd588d361a57abadd",
+    "semantic_hash": "28fa9ace614a5a5cd588d361a57abadd"
+  },
+  "config/filesystems.php": {
+    "mtime": 1753364715.7400053,
+    "ast_hash": "717e65d7bb8f32a4f298ea769891734a",
+    "semantic_hash": "717e65d7bb8f32a4f298ea769891734a"
+  },
+  "config/logging.php": {
+    "mtime": 1753364715.7402887,
+    "ast_hash": "8c2daadb3f84863916297f91d5f864e6",
+    "semantic_hash": "8c2daadb3f84863916297f91d5f864e6"
+  },
+  "config/mail.php": {
+    "mtime": 1753364715.7406037,
+    "ast_hash": "56b14578a660ef83c41fa599620bef6b",
+    "semantic_hash": "56b14578a660ef83c41fa599620bef6b"
+  },
+  "config/queue.php": {
+    "mtime": 1753364715.7412088,
+    "ast_hash": "fa588a4871790fca01d6a90af9208d15",
+    "semantic_hash": "fa588a4871790fca01d6a90af9208d15"
+  },
+  "config/services.php": {
+    "mtime": 1753364715.7419608,
+    "ast_hash": "57753d0f922030587fd9debe2db50a46",
+    "semantic_hash": "57753d0f922030587fd9debe2db50a46"
+  },
+  "config/session.php": {
+    "mtime": 1753364715.7423728,
+    "ast_hash": "8d895d2ad02331bf68a4fe40a92a64e5",
+    "semantic_hash": "8d895d2ad02331bf68a4fe40a92a64e5"
+  },
+  "database/factories/UserFactory.php": {
+    "mtime": 1753364715.7435493,
+    "ast_hash": "e863c5e59a1728c6fd033e87269acda7",
+    "semantic_hash": "e863c5e59a1728c6fd033e87269acda7"
+  },
+  "database/migrations/0001_01_01_000000_create_users_table.php": {
+    "mtime": 1753569072.049096,
+    "ast_hash": "99cddd666f7b7ab6930c60c18724d92f",
+    "semantic_hash": "99cddd666f7b7ab6930c60c18724d92f"
+  },
+  "database/migrations/0001_01_01_000001_create_cache_table.php": {
+    "mtime": 1753364715.7447636,
+    "ast_hash": "6803c10a1aa695d40633ec8bea5576d5",
+    "semantic_hash": "6803c10a1aa695d40633ec8bea5576d5"
+  },
+  "database/migrations/0001_01_01_000002_create_jobs_table.php": {
+    "mtime": 1753364715.7453551,
+    "ast_hash": "ead9cce2650b36345454f85e8c0214a0",
+    "semantic_hash": "ead9cce2650b36345454f85e8c0214a0"
+  },
+  "database/migrations/2025_07_24_080006_create_departments_table.php": {
+    "mtime": 1753603231.7462652,
+    "ast_hash": "a168098f824a538e0b172452c0a3296d",
+    "semantic_hash": "a168098f824a538e0b172452c0a3296d"
+  },
+  "database/migrations/2025_07_24_080016_create_positions_table.php": {
+    "mtime": 1753603257.1478558,
+    "ast_hash": "09313db3569a200d000040d26cf8aaba",
+    "semantic_hash": "09313db3569a200d000040d26cf8aaba"
+  },
+  "database/migrations/2025_07_24_140420_create_soltems_table.php": {
+    "mtime": 1753545786.7935076,
+    "ast_hash": "3d71fe57e3a3626a5fad5e410965bb4a",
+    "semantic_hash": "3d71fe57e3a3626a5fad5e410965bb4a"
+  },
+  "database/migrations/2025_07_24_140430_create_employees_table.php": {
+    "mtime": 1753626908.095158,
+    "ast_hash": "e2a478ef75fcb2e438d2ca97b5e87c2a",
+    "semantic_hash": "e2a478ef75fcb2e438d2ca97b5e87c2a"
+  },
+  "database/migrations/2025_07_24_140450_create_soltem_requests_table.php": {
+    "mtime": 1753564399.1531417,
+    "ast_hash": "f12d0071d525c63bc22783e9a667989d",
+    "semantic_hash": "f12d0071d525c63bc22783e9a667989d"
+  },
+  "database/migrations/2025_07_24_162841_create_soltem_installations_table.php": {
+    "mtime": 1753628962.7116733,
+    "ast_hash": "a5d581d722bf2bd9add2d417e313d6ca",
+    "semantic_hash": "a5d581d722bf2bd9add2d417e313d6ca"
+  },
+  "database/migrations/2025_07_24_204738_add_is_admin_to_users.php": {
+    "mtime": 1753569140.451626,
+    "ast_hash": "d9555fa14df5a422e00689e2c08198dd",
+    "semantic_hash": "d9555fa14df5a422e00689e2c08198dd"
+  },
+  "database/seeders/DatabaseSeeder.php": {
+    "mtime": 1753626940.2921803,
+    "ast_hash": "57bce472b3864af55d6d4170cfc872a1",
+    "semantic_hash": "57bce472b3864af55d6d4170cfc872a1"
+  },
+  "package.json": {
+    "mtime": 1753364715.7463048,
+    "ast_hash": "c1ba9c69f37a70e826ec86a9d3e67e95",
+    "semantic_hash": "c1ba9c69f37a70e826ec86a9d3e67e95"
+  },
+  "public/index.php": {
+    "mtime": 1753364715.7497451,
+    "ast_hash": "d8eda274115af5fd2aaa8230af329ef7",
+    "semantic_hash": "d8eda274115af5fd2aaa8230af329ef7"
+  },
+  "public/js/filament/filament/app.js": {
+    "mtime": 1753708594.2289624,
+    "ast_hash": "f284313f9aa2ef596670857c616c572f",
+    "semantic_hash": "f284313f9aa2ef596670857c616c572f"
+  },
+  "public/js/filament/filament/echo.js": {
+    "mtime": 1753708594.2307305,
+    "ast_hash": "93aeb81b50c3272130a5896d42f1acce",
+    "semantic_hash": "93aeb81b50c3272130a5896d42f1acce"
+  },
+  "public/js/filament/forms/components/color-picker.js": {
+    "mtime": 1753708594.1991837,
+    "ast_hash": "4393c422493e0e6143a80d58647ff2b7",
+    "semantic_hash": "4393c422493e0e6143a80d58647ff2b7"
+  },
+  "public/js/filament/forms/components/date-time-picker.js": {
+    "mtime": 1753708594.201292,
+    "ast_hash": "283f91bd54aa81d255fef7e71a598a43",
+    "semantic_hash": "283f91bd54aa81d255fef7e71a598a43"
+  },
+  "public/js/filament/forms/components/file-upload.js": {
+    "mtime": 1753708594.2046518,
+    "ast_hash": "2dd4c2bad4ee75061270a2d7fa2e1b6a",
+    "semantic_hash": "2dd4c2bad4ee75061270a2d7fa2e1b6a"
+  },
+  "public/js/filament/forms/components/key-value.js": {
+    "mtime": 1753708594.2065692,
+    "ast_hash": "b23b4554a7073f7911cb39a35b88f4e9",
+    "semantic_hash": "b23b4554a7073f7911cb39a35b88f4e9"
+  },
+  "public/js/filament/forms/components/markdown-editor.js": {
+    "mtime": 1753708594.2107317,
+    "ast_hash": "a594189e1ddb5fba4d3f6d95936376e9",
+    "semantic_hash": "a594189e1ddb5fba4d3f6d95936376e9"
+  },
+  "public/js/filament/forms/components/rich-editor.js": {
+    "mtime": 1753708594.2138605,
+    "ast_hash": "4c3820e6b93bd069495f3611a20354b8",
+    "semantic_hash": "4c3820e6b93bd069495f3611a20354b8"
+  },
+  "public/js/filament/forms/components/select.js": {
+    "mtime": 1753708594.2180355,
+    "ast_hash": "5ec29d715ecde23a6471d55924bf3258",
+    "semantic_hash": "5ec29d715ecde23a6471d55924bf3258"
+  },
+  "public/js/filament/forms/components/tags-input.js": {
+    "mtime": 1753708594.2193453,
+    "ast_hash": "0c2de9797b4b240e4c0f706863491e03",
+    "semantic_hash": "0c2de9797b4b240e4c0f706863491e03"
+  },
+  "public/js/filament/forms/components/textarea.js": {
+    "mtime": 1753708594.220089,
+    "ast_hash": "abb98c0edb3e7228142c14a8422ef7c6",
+    "semantic_hash": "abb98c0edb3e7228142c14a8422ef7c6"
+  },
+  "public/js/filament/notifications/notifications.js": {
+    "mtime": 1753708594.231833,
+    "ast_hash": "f873fe0caab22e4a8740d51d4f31a6da",
+    "semantic_hash": "f873fe0caab22e4a8740d51d4f31a6da"
+  },
+  "public/js/filament/support/support.js": {
+    "mtime": 1753708594.2344868,
+    "ast_hash": "a67594682bfbd05ea09a8b6572537eb8",
+    "semantic_hash": "a67594682bfbd05ea09a8b6572537eb8"
+  },
+  "public/js/filament/tables/components/table.js": {
+    "mtime": 1753708594.2212853,
+    "ast_hash": "09a22c2a575eca2fd38168c239db784e",
+    "semantic_hash": "09a22c2a575eca2fd38168c239db784e"
+  },
+  "public/js/filament/widgets/components/chart.js": {
+    "mtime": 1753708594.2242982,
+    "ast_hash": "a53c84c1b2b835139299492fd4278382",
+    "semantic_hash": "a53c84c1b2b835139299492fd4278382"
+  },
+  "public/js/filament/widgets/components/stats-overview/stat/chart.js": {
+    "mtime": 1753708594.2269113,
+    "ast_hash": "5a891480fd5fd333f4d506b657d7d548",
+    "semantic_hash": "5a891480fd5fd333f4d506b657d7d548"
+  },
+  "resources/js/app.js": {
+    "mtime": 1753364715.7665236,
+    "ast_hash": "1ccf2b9101110f40ecaab1608a6f91cf",
+    "semantic_hash": "1ccf2b9101110f40ecaab1608a6f91cf"
+  },
+  "resources/js/bootstrap.js": {
+    "mtime": 1753364715.7672577,
+    "ast_hash": "78f909acc19aea4717eddca5a87c1ba3",
+    "semantic_hash": "78f909acc19aea4717eddca5a87c1ba3"
+  },
+  "resources/views/welcome.blade.php": {
+    "mtime": 1753530833.820586,
+    "ast_hash": "da4534578c3bc1d2e14e9da347c60161",
+    "semantic_hash": "da4534578c3bc1d2e14e9da347c60161"
+  },
+  "routes/console.php": {
+    "mtime": 1753364715.7687716,
+    "ast_hash": "3c6ce2e6d16444282b24a9aa63885563",
+    "semantic_hash": "3c6ce2e6d16444282b24a9aa63885563"
+  },
+  "routes/web.php": {
+    "mtime": 1753364715.7694602,
+    "ast_hash": "84625c52e743b1a4178bb27b7afb3615",
+    "semantic_hash": "84625c52e743b1a4178bb27b7afb3615"
+  },
+  "tests/Feature/ExampleTest.php": {
+    "mtime": 1753364715.7773438,
+    "ast_hash": "d38ddea7655f855a32c0325991776d48",
+    "semantic_hash": "d38ddea7655f855a32c0325991776d48"
+  },
+  "tests/Pest.php": {
+    "mtime": 1753364715.7780404,
+    "ast_hash": "2ce3aadaa89db02a2dc0fd77c7629ac6",
+    "semantic_hash": "2ce3aadaa89db02a2dc0fd77c7629ac6"
+  },
+  "tests/TestCase.php": {
+    "mtime": 1753364715.7783706,
+    "ast_hash": "7e567dc27e68d5b57bae16af07f68907",
+    "semantic_hash": "7e567dc27e68d5b57bae16af07f68907"
+  },
+  "tests/Unit/ExampleTest.php": {
+    "mtime": 1753364715.7788408,
+    "ast_hash": "2bc41f1156dead26b2a3082f9634b041",
+    "semantic_hash": "2bc41f1156dead26b2a3082f9634b041"
+  },
+  "vite.config.js": {
+    "mtime": 1753364715.7795565,
+    "ast_hash": "ba4996e1d8e73333d5c9195b824b4219",
+    "semantic_hash": "ba4996e1d8e73333d5c9195b824b4219"
+  }
+}

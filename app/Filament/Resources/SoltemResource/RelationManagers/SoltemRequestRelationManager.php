@@ -79,6 +79,7 @@ class SoltemRequestRelationManager extends RelationManager
                         'approved' => 'success',
                         'rejected' => 'danger',
                         'pending' => 'gray',
+                        'returned' => 'warning',
                     }),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

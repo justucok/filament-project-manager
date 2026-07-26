@@ -33,6 +33,12 @@ WORKDIR /var/www
 # Copy existing application directory contents
 COPY . /var/www
 
+# Copy .env.example to .env so artisan scripts don't fail during composer install
+RUN cp .env.example .env
+
+# Set composer memory limit
+ENV COMPOSER_MEMORY_LIMIT=-1
+
 # Install composer dependencies
 RUN composer install --no-dev --optimize-autoloader
 
